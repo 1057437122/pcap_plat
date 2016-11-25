@@ -32,6 +32,7 @@ services:
    - manager_db
   volumes:
    - "./data/pcap:/pcap"
+   - "./data/scripts:/scripts"
    - "./data/pcaplog:/var/log/proftpd"
   ports:
    - "21:21"

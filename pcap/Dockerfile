@@ -13,10 +13,6 @@ RUN pip install pyshark
 RUN rm -rf /usr/share/wireshark/init.lua
 RUN apt-get install -y inotify-tools
 RUN pip install pyinotify
-#monitor py
-RUN mkdir -p /scripts
-COPY ./monitorpcap /scripts/
-COPY ./pcap_analysis.py /scripts/
 #FTP
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y proFtpd
 COPY ./proftpd.conf /etc/proftpd/

@@ -36,8 +36,9 @@ class EventHandler(ProcessEvent):
                     sql = a.createSQL(data)
                     a.wr2db(sql)
                     os.remove(pcap_file_name)
+                    print 'handled '+pcap_file_name
                 tar.close()
-                
+
                 os.remove(tar_file_name)
             except:
                 print 'file loading...'
