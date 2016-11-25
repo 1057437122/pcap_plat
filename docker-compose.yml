@@ -19,7 +19,7 @@ services:
   volumes:
    - "./data/myapp:/var/www/html"
    - "./data/dbbk:/dbbk"
-   - "./data/log:/var/log/apache2"
+   - "./data/weblog:/var/log/apache2"
   ports:
    - "8890:80"
   restart: always
@@ -32,6 +32,14 @@ services:
    - manager_db
   volumes:
    - "./data/pcap:/pcap"
+   - "./data/pcaplog:/var/log/proftpd"
+  ports:
+   - "21:21"
+   - "20:20"
+   - "2222:2222"
+   - "2223:2223"
+   - "2224:2224"
+   - "2225:2225"
   restart: always
   links:
    - manager_db
