@@ -16,6 +16,8 @@ RUN pip install pyinotify
 #FTP
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y proFtpd
 COPY ./proftpd.conf /etc/proftpd/
+#RUN apt-get install -y vsftpd
+#COPY ./vsftpd.conf /etc/vsftpd.conf
 RUN mkdir -p /pcap
 RUN useradd -d /pcap ftpuser
 RUN chown -R ftpuser /pcap
